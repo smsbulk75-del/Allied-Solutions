@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Allied Solutions | Insurance Advisor – Bathinda</title>
+  <meta name="description" content="Allied Solutions – Trusted insurance services in Bathinda. Life, health, motor, and general insurance. Near LIC Office, Bibi Wala Road.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f7fc;
+      color: #1a2634;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .navbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: #1e4a76;
+    }
+    .logo p {
+      font-size: 0.75rem;
+      color: #2c6e9e;
+      letter-spacing: 0.4px;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2c3e50;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+    .nav-links a:hover {
+      color: #1e7fb4;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #eef2ff 0%, #e0e9f5 100%);
+      padding: 60px 0 70px;
+      border-bottom: 1px solid #dce5ef;
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 800px;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #0a3a5c;
+      line-height: 1.2;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #2c4e6e;
+    }
+    .hero-badge {
+      margin-top: 12px;
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      background: #ffffffcc;
+      padding: 14px 24px;
+      border-radius: 60px;
+      backdrop-filter: blur(4px);
+      width: fit-content;
+      font-weight: 500;
+    }
+
+    /* Sections */
+    section {
+      padding: 64px 0;
+      border-bottom: 1px solid #e9edf2;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e5882;
+      margin-bottom: 36px;
+      letter-spacing: -0.3px;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 70px;
+      height: 3px;
+      background: #2c8fcf;
+      border-radius: 4px;
+    }
+
+    /* Grid cards */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+    .card {
+      background: white;
+      padding: 28px 24px;
+      border-radius: 28px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      border: 1px solid #eef2f8;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+    }
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      color: #1f6392;
+    }
+    .insurance-icon {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+    }
+
+    /* Contact page layout */
+    .contact-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      justify-content: space-between;
+    }
+    .contact-details {
+      flex: 1.2;
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 32px;
+      border: 1px solid #e2edf7;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+    .contact-details p {
+      margin: 24px 0;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .contact-details strong {
+      color: #1e6a9f;
+      min-width: 80px;
+    }
+    .map-placeholder {
+      flex: 0.9;
+      background: #e9f0f6;
+      border-radius: 32px;
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      font-style: normal;
+      color: #2c5c7c;
+      border: 1px solid #cfdde8;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Legal cards (privacy, terms) */
+    .legal-card {
+      background: #ffffff;
+      padding: 32px 36px;
+      border-radius: 32px;
+      border: 1px solid #e6edf4;
+      margin: 24px 0 16px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+    }
+    .legal-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #1f5e8c;
+    }
+    .legal-card h4 {
+      margin: 24px 0 10px 0;
+      color: #235f89;
+      font-weight: 600;
+    }
+    .legal-card p, .legal-card ul {
+      margin-bottom: 1rem;
+      line-height: 1.65;
+      color: #2d3a48;
+    }
+    .legal-card ul {
+      padding-left: 1.8rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #0f2b3b;
+      color: #cfdfed;
+      padding: 48px 0 24px;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 36px;
+    }
+    .footer-col h4 {
+      color: #ffbc6e;
+      margin-bottom: 18px;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .footer-col p, .footer-col a {
+      color: #cbdde9;
+      text-decoration: none;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+    .footer-col a:hover {
+      color: #ffbc6e;
+    }
+    .copyright {
+      text-align: center;
+      border-top: 1px solid #2f556b;
+      padding-top: 28px;
+      font-size: 0.85rem;
+    }
+
+    button, .btn-primary {
+      background: #1f6e9f;
+      color: white;
+      border: none;
+      padding: 10px 26px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-size: 0.95rem;
+    }
+    button:hover {
+      background: #0e5580;
+    }
+
+    @media (max-width: 780px) {
+      .navbar {
+        flex-direction: column;
+        gap: 14px;
+      }
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+      .legal-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <h1>🛡️ Allied Solutions</h1>
+        <p>Insurance | Investment | Peace of Mind</p>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#terms">Terms</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Home / Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h2>Secure Tomorrow,<br>Insure Today with Allied Solutions</h2>
+        <p>Your trusted insurance partner in Bathinda — offering life, health, motor, and business insurance tailored to your needs.</p>
+        <div class="hero-badge">
+          <span>📧 shubhamgarg1437@gmail.com</span>
+          <span>📞 9216180409</span>
+          <span>📍 Bibi Wala Road, Near LIC Office, Bathinda</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Description + Insurance Services -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Our Insurance Solutions</h2>
+      <div class="grid-3">
+        <div class="card">
+          <div class="insurance-icon">🏥</div>
+          <h3>Health Insurance</h3>
+          <p>Comprehensive medical coverage, cashless hospitals, critical illness plans. Protect your family from rising healthcare costs.</p>
+        </div>
+        <div class="card">
+          <div class="insurance-icon">🚗</div>
+          <h3>Motor Insurance</h3>
+          <p>Car, bike & commercial vehicle insurance. Zero depreciation, third-party liability, and quick claim settlement assistance.</p>
+        </div>
+        <div class="card">
+          <div class="insurance-icon">🏠</div>
+          <h3>Home & Property</h3>
+          <p>Protect your home, shop, or office against fire, theft, and natural calamities with affordable premiums.</p>
+        </div>
+        <div class="card">
+          <div class="insurance-icon">👨‍👩‍👧</div>
+          <h3>Life & Term Insurance</h3>
+          <p>Secure your family’s future with high-cover term plans, retirement solutions, and child education plans.</p>
+        </div>
+        <div class="card">
+          <div class="insurance-icon">🏢</div>
+          <h3>Business Insurance</h3>
+          <p>Liability, marine, and commercial shield for enterprises — from startups to established firms.</p>
+        </div>
+        <div class="card">
+          <div class="insurance-icon">📋</div>
+          <h3>Group Insurance</h3>
+          <p>Employee health, group term life, and customized corporate solutions to boost workforce welfare.</p>
+        </div>
+      </div>
+      <div style="margin-top: 40px; background: #eef3fa; border-radius: 28px; padding: 28px; text-align: center;">
+        <h3 style="color: #1a5a82;">Why Allied Solutions?</h3>
+        <p style="margin-top: 12px; max-width: 700px; margin-left: auto; margin-right: auto;">📌 15+ years of experience | 📌 Compare 20+ insurers | 📌 Lifetime claim support | 📌 Transparent advisory with zero hidden fees. We simplify insurance so you can focus on your goals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Page (Complete Contact Section) -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Get in Touch</h2>
+      <div class="contact-flex">
+        <div class="contact-details">
+          <h3 style="color:#1f6e9f; margin-bottom: 12px;">📞 Reach us for free consultation</h3>
+          <p><strong>📧 Email:</strong> shubhamgarg1437@gmail.com</p>
+          <p><strong>📱 Phone / WhatsApp:</strong> 9216180409</p>
+          <p><strong>📍 Office Address:</strong> Allied Solutions, Bibi Wala Road, Near LIC Office, Bathinda, Punjab – 151001</p>
+          <p><strong>🕒 Working Hours:</strong> Mon–Sat 10:00 AM – 7:00 PM | Sunday by appointment</p>
+          <button onclick="window.location.href='mailto:shubhamgarg1437@gmail.com?subject=Insurance%20Inquiry'">📧 Send Email Inquiry</button>
+          <button onclick="alert('Call us at 9216180409 or write to shubhamgarg1437@gmail.com for instant insurance support.')" style="background:#2c6e9e; margin-left: 12px;">📞 Quick Call Back</button>
+          <p style="margin-top: 22px; font-size: 0.9rem;">✨ Walk in for a personalized insurance portfolio review. We’re right next to LIC Office, Bibi Wala Road.</p>
+        </div>
+        <div class="map-placeholder">
+          <span style="font-size: 2rem;">📍</span>
+          <strong>Allied Solutions Office</strong>
+          Bibi Wala Road, Near LIC Office, Bathinda<br>
+          Landmark: Adjacent to LIC Branch, Main Market
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy Policy Section -->
+  <section id="privacy">
+    <div class="container">
+      <h2 class="section-title">Privacy Policy</h2>
+      <div class="legal-card">
+        <h3>Privacy Policy for Allied Solutions (Insurance Advisory)</h3>
+        <p><strong>Last Updated:</strong> 15 June 2026</p>
+        <p>Allied Solutions (“we”, “us”, “our”) respects your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or contact us for insurance services.</p>
+        
+        <h4>1. Information We Collect</h4>
+        <p>We may collect personal information such as your name, email address (shubhamgarg1437@gmail.com for correspondence), phone number (9216180409), address, and insurance-related data provided voluntarily through forms, emails, or calls. Non-personal data like browser type and IP address may also be logged for analytics.</p>
+
+        <h4>2. Use of Your Information</h4>
+        <p>We use the information to respond to inquiries, process insurance quotes, provide policy servicing, communicate updates, and improve our services. We do not sell, rent, or trade your personal data to third parties for marketing purposes.</p>
+
+        <h4>3. Data Sharing & Disclosure</h4>
+        <p>We may share your data with insurance partners/insurers solely for obtaining quotes, policy issuance, or claim assistance. All partners are contractually bound to protect your data.</p>
+
+        <h4>4. Security Measures</h4>
+        <p>We implement reasonable administrative, technical, and physical safeguards to protect your information. However, no internet transmission is 100% secure.</p>
+
+        <h4>5. Cookies & Tracking</h4>
+        <p>Our website may use cookies to enhance user experience. You may adjust browser settings to disable cookies.</p>
+
+        <h4>6. Your Rights</h4>
+        <p>You may request access, correction, or deletion of your personal data by contacting us at shubhamgarg1437@gmail.com or calling 9216180409.</p>
+
+        <h4>7. Changes to Policy</h4>
+        <p>We may update this policy periodically. Any changes will be posted on this page with an updated revision date.</p>
+        <p>For privacy concerns, reach our compliance officer: <strong>shubhamgarg1437@gmail.com</strong> / <strong>9216180409</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Terms & Conditions Section -->
+  <section id="terms">
+    <div class="container">
+      <h2 class="section-title">Terms & Conditions</h2>
+      <div class="legal-card">
+        <h3>Terms of Use – Allied Solutions</h3>
+        <p>Welcome to the website of Allied Solutions. By accessing or using this site, you agree to comply with these Terms & Conditions. If you do not agree, please do not use our website or services.</p>
+
+        <h4>1. General Information</h4>
+        <p>Allied Solutions is an insurance intermediary (corporate agent/advisor) providing comparison, advisory, and policy facilitation services in Bathinda, Punjab. We are not an insurer; final policy underwriting is subject to insurance company approval.</p>
+
+        <h4>2. Accuracy of Information</h4>
+        <p>While we strive to provide accurate product details, premiums, and terms, insurance products may change. Users are advised to verify policy details directly with the insurer. We are not liable for any discrepancies in third-party product information.</p>
+
+        <h4>3. No Guarantee of Coverage</h4>
+        <p>Quotes and proposals provided by us are indicative. Final issuance of insurance policies is at the sole discretion of the respective insurance company based on underwriting guidelines.</p>
+
+        <h4>4. Intellectual Property</h4>
+        <p>All content (text, graphics, logos) on this website is the property of Allied Solutions. You may not reproduce or distribute without prior written consent.</p>
+
+        <h4>5. Limitation of Liability</h4>
+        <p>Allied Solutions, its owners, or employees shall not be held liable for any direct, indirect, or consequential damages arising from the use of our website or services, including but not limited to claim rejection or delay by insurance company.</p>
+
+        <h4>6. Governing Law</h4>
+        <p>These terms shall be governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of courts in Bathinda, Punjab.</p>
+
+        <h4>7. Amendments</h4>
+        <p>We reserve the right to modify these Terms at any time. Continued use of the website constitutes acceptance of the updated Terms.</p>
+
+        <p>For any clarifications regarding terms, contact us: <strong>shubhamgarg1437@gmail.com</strong> or call <strong>9216180409</strong>.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer with Copyright -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>🛡️ Allied Solutions</h4>
+        <p>Your trusted insurance advisor in Bathinda. Compare, buy, and claim assistance — all under one roof.</p>
+        <p>📌 IRDAI compliant & customer-first approach.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <p><a href="#home">Home</a><br>
+           <a href="#services">Insurance Services</a><br>
+           <a href="#contact">Contact Us</a><br>
+           <a href="#privacy">Privacy Policy</a><br>
+           <a href="#terms">Terms & Conditions</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <p>📧 shubhamgarg1437@gmail.com</p>
+        <p>📞 9216180409</p>
+        <p>🏢 Bibi Wala Road, Near LIC Office, Bathinda, Punjab - 151001</p>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2026 Allied Solutions (Insurance Advisory), Bathinda. All Rights Reserved. | Designed for trust & transparency.
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<div style="position: fixed; bottom: 24px; right: 24px; z-index: 99;">
+  <button onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top" style="background:#1f6e9f; width:48px; height:48px; border-radius: 40px; font-size: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); cursor:pointer; display: flex; align-items: center; justify-content: center;">↑</button>
+</div>
+
+<!-- Smooth scroll script -->
+<script>
+  document.querySelectorAll('.nav-links a, .footer-col a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId && targetId.startsWith('#')) {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.pushState(null, null, targetId);
+        }
+      }
+    });
+  });
+  const homeNav = document.querySelector('.nav-links a[href="#home"]');
+  if(homeNav) {
+    homeNav.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      history.pushState(null, null, '#home');
+    });
+  }
+</script>
+</body>
+</html>
